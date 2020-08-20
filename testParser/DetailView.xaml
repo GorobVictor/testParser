@@ -1,0 +1,27 @@
+﻿<Window x:Class="testParser.DetailView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:testParser"
+        mc:Ignorable="d"
+        Title="DetailView" Height="450" Width="800">
+    <Grid>
+        <Image x:Name="img_ImageAlbum" HorizontalAlignment="Left" Margin="20,20,0,0" VerticalAlignment="Top" Width="250" Height="250"/>
+        <Label x:Name="labl_NameSong" Content="Label" HorizontalAlignment="Left" Margin="270,20,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+        <Label x:Name="labl_NameAlbum" Content="Label" HorizontalAlignment="Left" Margin="270,50,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
+        <Label x:Name="labl_NameArtist" Content="Label" HorizontalAlignment="Left" Margin="270,80,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <Image x:Name="img_ImageArtist" HorizontalAlignment="Right" Height="100" Margin="0,20,20,0" VerticalAlignment="Top" Width="100"/>
+        <ListView x:Name="listview_Viewer" Margin="20,290,20,10">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Id" Width="120" DisplayMemberBinding="{Binding Id}" />
+                    <GridViewColumn Header="Name" Width="100" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="Artist" Width="100" DisplayMemberBinding="{Binding Artist.Name}" />
+                    <GridViewColumn Header="Album" Width="100" DisplayMemberBinding="{Binding Album.Name}" />
+                    <GridViewColumn Header="Album" Width="100" DisplayMemberBinding="{Binding Duration}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>
