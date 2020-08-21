@@ -53,6 +53,11 @@ namespace LangitMusik.Model {
             }
             set { _photoImg = value; }
         }
+        /// <summary>
+        /// Парсинг плейлиста
+        /// </summary>
+        /// <param name="id">id плейлиста</param>
+        /// <returns></returns>
         public async override Task<IMainInformation> ParsingJson(string id) {
             var json = JObject.Parse(await _client.GetStringAsync($"https://www.langitmusik.co.id/rest/playlist/details?playlistId={id}&page=1&limit=100"));
             var result = new Playlist(
@@ -70,6 +75,8 @@ namespace LangitMusik.Model {
                 new Album(x["albumId"].ToObject<int>(), x["albumName"].ToString()),
                 new Artist(x["artistId"].ToObject<int>(), x["artistName"].ToString()),
                 (x["playtime"].ToObject<int>() / 60, x["playtime"].ToObject<int>() % 60))).ToList();
+
+            #region Скачивание фото
             //for (int i = 0; i < result.Songs.Count(); i++) {
             //    result.Songs[i].Album = await ((Album)result.Songs[i].Album).GetObject(result.Songs[i].Album.Id);
             //    if (result.Songs[i].Album.Photo != null) {
@@ -77,6 +84,7 @@ namespace LangitMusik.Model {
             //        result.Songs[i].PhotoImg = await SetBitmap(result.Songs[i].Album.Photo);
             //    }
             //}
+            #endregion
             return result;
         }
     }

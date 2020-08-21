@@ -15,13 +15,13 @@
                     <GridViewColumn Header="Name" Width="100" DisplayMemberBinding="{Binding Name}" />
                     <GridViewColumn Header="Artist" Width="100" DisplayMemberBinding="{Binding Artist.Name}" />
                     <GridViewColumn Header="Album" Width="100" DisplayMemberBinding="{Binding Album.Name}" />
-                    <GridViewColumn Header="Album" Width="100" DisplayMemberBinding="{Binding Duration}" />
+                    <GridViewColumn Header="Duration" Width="100" DisplayMemberBinding="{Binding Duration}" />
                     <!--<GridViewColumn Header="Photo" Width="250" DisplayMemberBinding="{Binding Photo}" />-->
                     <!--<GridViewColumn Header="Duration" Width="100" DisplayMemberBinding="{Binding PhotoImg}" />-->
                 </GridView>
             </ListView.View>
         </ListView>
-        <TextBox x:Name="txt_Search" HorizontalAlignment="Stretch" Margin="20,10,150,0" Text="https://www.langitmusik.co.id/new/album/11727392" TextWrapping="Wrap" VerticalAlignment="Top" Height="20"/>
+        <TextBox x:Name="txt_Search" HorizontalAlignment="Stretch" Margin="20,10,150,0" Text="https://www.langitmusik.co.id/new/playlist/6852650" TextWrapping="Wrap" VerticalAlignment="Top" Height="20"/>
 
     </Grid>
 </Window>

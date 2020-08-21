@@ -37,9 +37,13 @@ namespace testParser {
                 listview_Viewer.ItemsSource = obj.Songs.ToList();
             btn_Go.IsEnabled = true;
         }
-
+        /// <summary>
+        /// Обработка нажатия двойного клика во строке
+        /// </summary>
         private async void listview_Viewer_MouseDoubleClick(object sender, MouseButtonEventArgs e) {
             var item = ((FrameworkElement)e.OriginalSource).DataContext as Song;
+            if (item == null)
+                return;
             item.Album = (Album)await item.Album.GetObject(item.Album.Id);
             item.Artist = (Artist)await item.Artist.GetObject(item.Artist.Id);
             for (int i = 0; i < item.Album.Songs.Count(); i++) {

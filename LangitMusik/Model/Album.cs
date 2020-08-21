@@ -1,14 +1,10 @@
-﻿using AngleSharp.Dom;
-using AngleSharp.Html.Parser;
-using LangitMusik.Model.Abstract;
+﻿using LangitMusik.Model.Abstract;
 using LangitMusik.Model.Interface;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace LangitMusik.Model {
@@ -63,6 +59,11 @@ namespace LangitMusik.Model {
             }
             set { _artist = value; }
         }
+        /// <summary>
+        /// Парсинг альбома
+        /// </summary>
+        /// <param name="id">id альбома</param>
+        /// <returns></returns>
         public async override Task<IMainInformation> ParsingJson(string id) {
             var json = JObject.Parse(await _client.GetStringAsync($"https://www.langitmusik.co.id/rest/detail/album2/{id}"));
             var album = new Album(

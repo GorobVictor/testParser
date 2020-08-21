@@ -63,7 +63,11 @@ namespace LangitMusik.Model {
         }
 
         public (int, int) Duration { get { return _duration; } set { _duration = value; } }
-
+        /// <summary>
+        /// Парсинг песни
+        /// </summary>
+        /// <param name="id">id песни</param>
+        /// <returns></returns>
         public async override Task<IMainInformation> ParsingJson(string id) {
             var json = JArray.Parse(await _client.GetStringAsync($"https://www.langitmusik.co.id/rest/song/set?songId={id}"));
             var album = (Album)await new Album().GetObject(json[0]["albumId"].ToString());

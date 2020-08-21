@@ -52,7 +52,11 @@ namespace LangitMusik.Model {
             }
             set { _photoImg = value; }
         }
-
+        /// <summary>
+        /// Парсинг артиста
+        /// </summary>
+        /// <param name="id">id артиста</param>
+        /// <returns></returns>
         public async override Task<IMainInformation> ParsingJson(string id) {
             var json = JObject.Parse(await _client.GetStringAsync($"https://www.langitmusik.co.id/rest/artist/detail/{id}"));
             var artist = new Artist(

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:testParser"
         mc:Ignorable="d"
-        Title="DetailView" Height="450" Width="800">
+        Title="DetailView" Height="447" Width="677">
     <Grid>
         <Image x:Name="img_ImageAlbum" HorizontalAlignment="Left" Margin="20,20,0,0" VerticalAlignment="Top" Width="250" Height="250"/>
         <Label x:Name="labl_NameSong" Content="Label" HorizontalAlignment="Left" Margin="270,20,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
@@ -15,11 +15,11 @@
         <ListView x:Name="listview_Viewer" Margin="20,290,20,10">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Id" Width="120" DisplayMemberBinding="{Binding Id}" />
-                    <GridViewColumn Header="Name" Width="100" DisplayMemberBinding="{Binding Name}" />
-                    <GridViewColumn Header="Artist" Width="100" DisplayMemberBinding="{Binding Artist.Name}" />
-                    <GridViewColumn Header="Album" Width="100" DisplayMemberBinding="{Binding Album.Name}" />
-                    <GridViewColumn Header="Album" Width="100" DisplayMemberBinding="{Binding Duration}" />
+                    <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding Id}" />
+                    <GridViewColumn Header="Name" Width="140" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="Artist" Width="140" DisplayMemberBinding="{Binding Artist.Name}" />
+                    <GridViewColumn Header="Album" Width="140" DisplayMemberBinding="{Binding Album.Name}" />
+                    <GridViewColumn Header="Duration" Width="50" DisplayMemberBinding="{Binding Duration}" />
                 </GridView>
             </ListView.View>
         </ListView>

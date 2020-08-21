@@ -1,20 +1,23 @@
-﻿using AngleSharp.Html.Parser;
-using LangitMusik.Model.Interface;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+﻿using LangitMusik.Model.Interface;
 using System;
 using System.Drawing;
-using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace LangitMusik.Model.Abstract {
+    /// <summary>
+    /// Класс парсинга
+    /// </summary>
     public abstract class Parsing {
         protected static HttpClient _client = new HttpClient();
         protected static WebClient _webclient = new WebClient();
-        protected static IHtmlParser _parser = new HtmlParser();
         public abstract Task<IMainInformation> ParsingJson(string id);
+        /// <summary>
+        /// Шаблон обработки ошибок
+        /// </summary>
+        /// <param name="id">принимаемый id объекта</param>
+        /// <returns></returns>
         public async Task<IMainInformation> GetObject(string id) {
             int _try = 0;
             while (_try < 5)
@@ -37,6 +40,11 @@ namespace LangitMusik.Model.Abstract {
             return null;
         }
         public async Task<IMainInformation> GetObject(int id) => await GetObject(id.ToString());
+        /// <summary>
+        /// Скачивание фото
+        /// </summary>
+        /// <param name="url">адрес фото</param>
+        /// <returns></returns>
         public async Task<Bitmap> SetBitmap(string url) {
             try {
                 Bitmap result = null;
