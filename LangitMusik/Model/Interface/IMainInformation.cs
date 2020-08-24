@@ -9,6 +9,7 @@ namespace LangitMusik.Model.Interface {
     public interface IMainInformation {
         int Id { get; set; }
         string Name { get; set; }
+        string Description { get; set; }
         string Photo { get; set; }
         Bitmap PhotoImg { get; set; }
     }

@@ -12,9 +12,11 @@
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Id" Width="120" DisplayMemberBinding="{Binding Id}" />
-                    <GridViewColumn Header="Name" Width="100" DisplayMemberBinding="{Binding Name}" />
-                    <GridViewColumn Header="Artist" Width="100" DisplayMemberBinding="{Binding Artist.Name}" />
-                    <GridViewColumn Header="Album" Width="100" DisplayMemberBinding="{Binding Album.Name}" />
+                    <GridViewColumn Header="Title" Width="100" DisplayMemberBinding="{Binding Title}" />
+                    <GridViewColumn Header="ArtistId" Width="100" DisplayMemberBinding="{Binding ArtistId}" />
+                    <GridViewColumn Header="Artist" Width="100" DisplayMemberBinding="{Binding Artist}" />
+                    <GridViewColumn Header="AlbumId" Width="100" DisplayMemberBinding="{Binding AlbumId}" />
+                    <GridViewColumn Header="Album" Width="100" DisplayMemberBinding="{Binding Album}" />
                     <GridViewColumn Header="Duration" Width="100" DisplayMemberBinding="{Binding Duration}" />
                     <!--<GridViewColumn Header="Photo" Width="250" DisplayMemberBinding="{Binding Photo}" />-->
                     <!--<GridViewColumn Header="Duration" Width="100" DisplayMemberBinding="{Binding PhotoImg}" />-->

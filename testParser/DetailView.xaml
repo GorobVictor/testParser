@@ -15,10 +15,12 @@
         <ListView x:Name="listview_Viewer" Margin="20,290,20,10">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Id" Width="60" DisplayMemberBinding="{Binding Id}" />
-                    <GridViewColumn Header="Name" Width="140" DisplayMemberBinding="{Binding Name}" />
-                    <GridViewColumn Header="Artist" Width="140" DisplayMemberBinding="{Binding Artist.Name}" />
-                    <GridViewColumn Header="Album" Width="140" DisplayMemberBinding="{Binding Album.Name}" />
+                    <GridViewColumn Header="Id" Width="70" DisplayMemberBinding="{Binding Id}" />
+                    <GridViewColumn Header="Title" Width="100" DisplayMemberBinding="{Binding Title}" />
+                    <GridViewColumn Header="ArtistId" Width="100" DisplayMemberBinding="{Binding ArtistId}" />
+                    <GridViewColumn Header="Artist" Width="100" DisplayMemberBinding="{Binding Artist}" />
+                    <GridViewColumn Header="AlbumId" Width="100" DisplayMemberBinding="{Binding AlbumId}" />
+                    <GridViewColumn Header="Album" Width="100" DisplayMemberBinding="{Binding Album}" />
                     <GridViewColumn Header="Duration" Width="50" DisplayMemberBinding="{Binding Duration}" />
                 </GridView>
             </ListView.View>

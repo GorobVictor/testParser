@@ -2,9 +2,9 @@
 
 namespace LangitMusik.Model.Interface {
     /// <summary>
-    /// Содержание массива фото
+    /// Содержание массива песен
     /// </summary>
     public interface IListing {
-        List<Song> Songs { get; set; }
+        List<NewSong> Songs { get; set; }
     }
 }
